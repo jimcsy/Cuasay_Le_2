@@ -31,13 +31,7 @@ class DiceGame:
 		with open(self.score_file, "w") as file:
 			for username, score, wins, game_id in scores:
 				file.write(f"{username},{score},{wins},{game_id}\n")
-
-
-	def save_scores(self, scores):
-		with open(self.score_file, "w") as file:
-			for username, score, stage_score, date in scores:
-				file.write(f"{username},{score},{stage_score},{date}\n")
-
+				
 	def top_scores(self):
 		top_scores = self.scores()
 		top_scores.append((self.score.record()))
